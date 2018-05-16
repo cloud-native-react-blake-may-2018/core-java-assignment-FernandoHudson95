@@ -30,7 +30,24 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String acronym(String phrase) {
-		// TODO Write an implementation for this method declaration
+
+		int x = 0;
+		int count = 1;
+		
+		String word = "";
+		//String phrase = "I Love Dogs";
+		word += phrase.charAt(0);
+		
+		while (x < phrase.length() ){
+			if (phrase.charAt(x) == ' ' && count < 3) {
+				count++;
+				word += phrase.charAt(x + 1);
+			}
+			++x;
+		}
+		
+		System.out.println("This is acronym: " + word );
+		
 		return null;
 	}
 
@@ -97,6 +114,14 @@ public class EvaluationService {
 			// TODO Write an implementation for this method declaration
 			return false;
 		}
+		
+		/*if (sideOne == sideTwo && sideTwo == sideThree){
+			System.out.println("This triangle is an Equilateral triangle!");
+		}else if (sideOne == sideTwo || sideTwo == sideThree || sideThree == sideOne){
+			System.out.println("This triangle is an Isosceles triangle!");
+		}else if (sideOne != sideTwo && sideTwo != sideThree && sideThree != sideOne){
+			System.out.println("This triangle is a Scalene triangle!");
+		}*/
 
 	}
 
@@ -116,7 +141,67 @@ public class EvaluationService {
 	 * @return
 	 */
 	public int getScrabbleScore(String string) {
-		// TODO Write an implementation for this method declaration
+
+		/*String string = "cabbage";
+		 int x = 0;
+		 int score = 0;
+		 //System.out.println("This score will be " + score + " to start.");
+		 
+		 while (x < string.length() ){
+			 string = string.toUpperCase();
+			 //System.out.println(string);
+			 
+			 if ( string.charAt(x) == 'A' 
+					 || string.charAt(x) == 'E' 
+					 || string.charAt(x) == 'I'
+					 || string.charAt(x) == 'O' 
+					 || string.charAt(x) == 'U'
+					 || string.charAt(x) == 'L'
+					 || string.charAt(x) == 'N'
+					 || string.charAt(x) == 'R'
+					 || string.charAt(x) == 'S'
+					 || string.charAt(x) == 'T') {
+				 score += 1;
+				 //System.out.println(score);
+					
+				}else if (string.charAt(x) == 'D' 
+						 || string.charAt(x) == 'G') {
+					 score += 2;
+					// System.out.println(score);
+					
+				}else if (string.charAt(x) == 'B' 
+						 || string.charAt(x) == 'C'
+						 || string.charAt(x) == 'M'
+						 || string.charAt(x) == 'P') {
+					 score += 3;
+					// System.out.println(score);
+				}else if (string.charAt(x) == 'F' 
+						 || string.charAt(x) == 'H'
+						 || string.charAt(x) == 'V'
+						 || string.charAt(x) == 'W'
+						 || string.charAt(x) == 'Y') {
+					 score += 4;
+					// System.out.println(score);
+				}else if (string.charAt(x) == 'K') {
+					 score += 5;
+					// System.out.println(score);
+				}else if (string.charAt(x) == 'J' 
+						 || string.charAt(x) == 'X') {
+					 score += 8;
+					 //System.out.println(score);
+				}else if (string.charAt(x) == 'Z') {
+					 score += 10;
+					// System.out.println(score);
+				}
+			 ++x;
+				
+			
+			} 
+		 
+		 System.out.println("The score of " + string + " is: " + score);
+		
+		return score;*/
+		//GET RID OF RETURN SCORE NOT 0 WHEN READY TO TEST
 		return 0;
 	}
 
