@@ -656,8 +656,42 @@ public class EvaluationService {
 		 * @return
 		 */
 		public static String encode(String string) {
-			// TODO Write an implementation for this method declaration
-			return null;
+
+
+			String allchar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			 string=string.replaceAll(" ", "");
+			 string=string.toUpperCase();
+	         int len= string.length();
+	         int len1 = allchar.length();
+	         String cipher="";
+	         int count = 0;
+	         
+	         for(int i=0; i<len; i++)
+	         {
+	             char b=string.charAt(i);
+	             if(Character.isLetter(b)) {
+	             for(int j=0; j<len1; j++)
+	             {
+	                 char c = allchar.charAt(j);
+	                 if(c == b )
+	                 {
+	                     int index=allchar.indexOf(c);
+	                     int position=(len1-1)-index;
+	                     cipher+= allchar.charAt(position);
+	                     count++;
+	                     if(count % 5 == 0){
+	                         cipher += " ";
+	                     }
+	                     break;
+	                 }//System.out.println(cipher);
+	             }
+	             }
+	             else if(Character.isDigit(b)){
+	            	 cipher += b;
+	             }
+	         }
+	         System.out.println(cipher.toLowerCase());
+	        return string;
 		}
 
 		/**
@@ -667,8 +701,39 @@ public class EvaluationService {
 		 * @return
 		 */
 		public static String decode(String string) {
-			// TODO Write an implementation for this method declaration
-			return null;
+			String allchar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			 string=string.toUpperCase();
+	         int len= string.length();
+	         int len1 = allchar.length();
+	         String cipher="";
+	         int count = 0;
+	         
+	         for(int i=0; i<len; i++)
+	         {
+	             char b=string.charAt(i);
+	             if(Character.isLetter(b)) {
+	             for(int j=0; j<len1; j++)
+	             {
+	                 char c = allchar.charAt(j);
+	                 if(c == b )
+	                 {
+	                     int index=allchar.indexOf(c);
+	                     int position=(len1-1)-index;
+	                     cipher+= allchar.charAt(position);
+	                     count++;
+	                     /*if(count % 5 == 0){
+	                         cipher += " ";
+	                     }*/
+	                     break;
+	                 }//System.out.println(cipher);
+	             }
+	             }
+	             else if(Character.isDigit(b)){
+	            	 cipher += b;
+	             }
+	         }
+	         System.out.println(cipher.toLowerCase());			
+	         return null;
 		}
 	}
 
