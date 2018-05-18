@@ -493,7 +493,23 @@ public class EvaluationService {
 	 * @return
 	 */
 	public List<Long> calculatePrimeFactorsOf(long l) {
-		// TODO Write an implementation for this method declaration
+
+	    /* while (l%2==0)
+	     {
+	         System.out.print(2 + " ");
+	         l /= 2;
+	     }
+
+	     for (int i = 3; i <= Math.sqrt(l); i+= 2)
+	     {
+	         while (l%i == 0)
+	         {
+	             System.out.print(i + " ");
+	             l /= i;
+	         }
+	     }
+	     if (l > 2)
+	         System.out.print(l + " ");*/
 		return null;
 	}
 
@@ -532,7 +548,40 @@ public class EvaluationService {
 		}
 
 		public String rotate(String string) {
-			// TODO Write an implementation for this method declaration
+
+			/*StringBuffer result= new StringBuffer();
+			
+			for (int i=0; i<string.length(); i++)
+			{
+				if (Character.isUpperCase(string.charAt(i)))
+				{
+					char ch = (char)(((int)string.charAt(i) +
+									key - 65) % 26 + 65);
+					result.append(ch);
+				}
+				else if (Character.isWhitespace(string.charAt(i))){
+				     char ch = ' ';
+				   result.append(ch);
+				}
+				else if (Character.isDigit(string.charAt(i))) {
+					char ch = string.charAt(i);
+					result.append(ch);					
+				}
+				else if(!Character.isDigit(string.charAt(i)) && 
+						!Character.isWhitespace(string.charAt(i)) && 
+						!Character.isAlphabetic(string.charAt(i))) {
+					
+					char ch = string.charAt(i);
+					result.append(ch);	
+				}
+				else
+				{
+					char ch = (char)(((int)string.charAt(i) +
+									key - 97) % 26 + 97);
+					result.append(ch);
+				}
+			}
+			System.out.println(result);*/
 			return null;
 		}
 
@@ -551,8 +600,16 @@ public class EvaluationService {
 	 * @return
 	 */
 	public int calculateNthPrime(int i) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+
+		for(int j=2;2*j<=i;j++) {
+	        if(i%j==0) {
+	           System.out.println(i + " is not a prime number.");
+	        }
+	        else {
+	           System.out.println(i + " is a prime number.");
+	        }
+		
+		//return 0;
 	}
 
 	/**
