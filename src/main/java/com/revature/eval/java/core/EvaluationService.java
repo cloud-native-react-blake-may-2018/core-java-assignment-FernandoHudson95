@@ -601,15 +601,26 @@ public class EvaluationService {
 	 */
 	public int calculateNthPrime(int i) {
 
-		for(int j=2;2*j<=i;j++) {
-	        if(i%j==0) {
-	           System.out.println(i + " is not a prime number.");
+		/*int num = 1;
+	    int j;
+	    int count = 0;
+
+	    while (count < i){
+	      num=num+1;
+	      for (j = 2; j <= num; j++){
+	        if (num % j == 0) {
+	          break;
 	        }
-	        else {
-	           System.out.println(i + " is a prime number.");
-	        }
+	      }
+	      if ( j == num){
+	        count = count+1;
+	      }
+	    }
+	    if(i != 0) {
+	    System.out.println("Value of nth prime: " + num);
+	    }*/
 		
-		//return 0;
+		return i;
 	}
 
 	/**
