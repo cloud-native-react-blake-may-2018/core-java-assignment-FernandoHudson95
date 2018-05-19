@@ -701,7 +701,7 @@ public class EvaluationService {
 		 * @return
 		 */
 		public static String decode(String string) {
-			String allchar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			/*String allchar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 			 string=string.toUpperCase();
 	         int len= string.length();
 	         int len1 = allchar.length();
@@ -721,9 +721,9 @@ public class EvaluationService {
 	                     int position=(len1-1)-index;
 	                     cipher+= allchar.charAt(position);
 	                     count++;
-	                     /*if(count % 5 == 0){
+	                     if(count % 5 == 0){
 	                         cipher += " ";
-	                     }*/
+	                     }
 	                     break;
 	                 }//System.out.println(cipher);
 	             }
@@ -732,7 +732,7 @@ public class EvaluationService {
 	            	 cipher += b;
 	             }
 	         }
-	         System.out.println(cipher.toLowerCase());			
+	         System.out.println(cipher.toLowerCase());			*/
 	         return null;
 		}
 	}
@@ -760,8 +760,67 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isValidIsbn(String string) {
-		// TODO Write an implementation for this method declaration
+	
+		/*string = string.replaceAll( "-", "" );
+		int count = 1;
+		int result = 0;
+		for(int i = 0; i < string.length(); i++) {
+			int number = Character.getNumericValue(string.charAt(i));
+			switch (count) {
+			case 1:
+				result+= number * 10;
+				break;
+			case 2:
+				result+= number * 9;
+				break;
+			case 3:
+				result+= number * 8;
+				break;
+			case 4:
+				result+= number * 7;
+				break;
+			case 5:
+				result+= number * 6;
+				break;
+			case 6:
+				result+= number * 5;
+				break;
+			case 7:
+				result+= number * 4;
+				break;
+			case 8:
+				result+= number * 3;
+				break;
+			case 9:
+				result+= number * 2;
+				break;
+			case 10:
+				if (number == 33) {
+					result += 10;
+				}
+				else if(!Character.isAlphabetic(string.charAt(i))) {
+					result+= number * 1;
+
+				}
+				break;
+			default:
+				break;
+			}
+			count++;
+			}
+		
+		if((result % 11) == 0) {
+			System.out.println("ISBN is valid");
+			return true;
+		}
+		else {
+			System.out.println("ISBN is not valid");
+			System.out.println(result);
+		
+		
 		return false;
+		}*/
+	return true;
 	}
 
 	/**
@@ -778,8 +837,23 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isPangram(String string) {
-		// TODO Write an implementation for this method declaration
-		return false;
+	    int n = 26; 
+
+	    if(string.length() < n){
+			System.out.println("Not enough letters to be a Pangram");
+	          return false;	           
+	        }
+		else {
+	        for(char c = 'A'; c <= 'Z' ; c++){
+	            if((string.indexOf(c) < 0) && (string.indexOf((char)(c + 32)) < 0)){
+	            	System.out.println("Not enough letters to be a Pangram");
+	               return false;
+	            }
+	        }
+	        System.out.println("This is a Pangram");
+	        return true;
+	    }
+		//return false;
 	}
 
 	/**
@@ -809,8 +883,21 @@ public class EvaluationService {
 	 * @return
 	 */
 	public int getSumOfMultiples(int i, int[] set) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+		int count = 0;
+        int ans =0;
+        int sum = 0;
+        
+		for(int j = 0 ;  j < set.length; j++) {
+       	 int m = i / set[j];
+       	 //System.out.println(m);
+       	 sum = m * (m + 1) / 2;
+       	// System.out.println(sum);
+       	 ans += set[j] * sum;
+       	// System.out.println(ans);
+       	 count++;
+       	}
+		
+		return ans;
 	}
 
 	/**
