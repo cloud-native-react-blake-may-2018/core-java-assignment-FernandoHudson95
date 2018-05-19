@@ -910,7 +910,7 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isLuhnValid(String string) {
-		/*int nDigits = string.length();
+		int nDigits = string.length();
 		 
 	    int nSum = 0;
 	    boolean isSecond = false;
@@ -925,9 +925,9 @@ public class EvaluationService {
 	        nSum += d % 10;
 	 
 	        isSecond = !isSecond;
+	        return true;
 	    }
-	    return (nSum % 10 == 0);*/
-	    return false;
+	    return (nSum % 10 == 0);
 	}
 
 	/**
