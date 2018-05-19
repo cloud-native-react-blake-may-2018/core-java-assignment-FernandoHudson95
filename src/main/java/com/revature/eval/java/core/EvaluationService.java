@@ -34,7 +34,7 @@ public class EvaluationService {
 	 */
 	public String acronym(String phrase) {
 
-		/*int x = 0;
+		int x = 0;
 		int count = 1;
 		
 		String word = "";
@@ -49,9 +49,9 @@ public class EvaluationService {
 			++x;
 		}
 		
-		System.out.println("This is acronym: " + word );*/
+		System.out.println("This is acronym: " + word );
 		
-		return null;
+		return word;
 	}
 
 	/**
@@ -104,27 +104,25 @@ public class EvaluationService {
 		}
 
 		public boolean isEquilateral() {
-			// TODO Write an implementation for this method declaration
-			return false;
+			if (sideOne == sideTwo && sideTwo == sideThree){
+				return true;
+				//System.out.println("This triangle is an Equilateral triangle!");
+			}			return false;
 		}
 
 		public boolean isIsosceles() {
-			// TODO Write an implementation for this method declaration
-			return false;
+			if (sideOne == sideTwo || sideTwo == sideThree || sideThree == sideOne){
+				return true;
+				//System.out.println("This triangle is an Isosceles triangle!");
+			}			return false;
 		}
 
 		public boolean isScalene() {
-			// TODO Write an implementation for this method declaration
-			return false;
+			if (sideOne != sideTwo && sideTwo != sideThree && sideThree != sideOne){
+				return true;
+				//System.out.println("This triangle is a Scalene triangle!");
+			}			return false;
 		}
-		
-		/*if (sideOne == sideTwo && sideTwo == sideThree){
-			System.out.println("This triangle is an Equilateral triangle!");
-		}else if (sideOne == sideTwo || sideTwo == sideThree || sideThree == sideOne){
-			System.out.println("This triangle is an Isosceles triangle!");
-		}else if (sideOne != sideTwo && sideTwo != sideThree && sideThree != sideOne){
-			System.out.println("This triangle is a Scalene triangle!");
-		}*/
 
 	}
 
@@ -145,7 +143,7 @@ public class EvaluationService {
 	 */
 	public int getScrabbleScore(String string) {
 
-		/*String string = "cabbage";
+		//String string = "cabbage";
 		 int x = 0;
 		 int score = 0;
 		 //System.out.println("This score will be " + score + " to start.");
@@ -192,7 +190,8 @@ public class EvaluationService {
 						 || string.charAt(x) == 'X') {
 					 score += 8;
 					 //System.out.println(score);
-				}else if (string.charAt(x) == 'Z') {
+				}else if (string.charAt(x) == 'Q'
+						 || string.charAt(x) == 'Z') {
 					 score += 10;
 					// System.out.println(score);
 				}
@@ -203,9 +202,7 @@ public class EvaluationService {
 		 
 		 System.out.println("The score of " + string + " is: " + score);
 		
-		return score;*/
-		//RETURN SCORE NOT 0 WHEN READY TO TEST
-		return 0;
+		return score;
 	}
 
 	/**
@@ -241,27 +238,18 @@ public class EvaluationService {
 	 */
 	public String cleanPhoneNumber(String string) {
 
-		/*String string = "+1 (613)-995-0253";
+		//String string = "+1 (613)-995-0253";
 		int x = 0;
 		String newNumber = "";
 
 		while (x < string.length()) {
 			if (Character.isDigit(string.charAt(x))) {
-
-				// System.out.println("This is a number!");
-				// System.out.println(string.charAt(x));
 				newNumber += string.charAt(x);
-				// System.out.println(newNumber);
 				x++;
-
 			} else {
-				// System.out.println("This is not a number!");
-				// System.out.println(string.charAt(x));
 				x++;
 			}
-
 		}
-		//System.out.println(newNumber);
 
 		if (newNumber.length() > 11) {
 			System.out.println("There are " + newNumber.length() + " numbers! Try again!");
@@ -276,9 +264,8 @@ public class EvaluationService {
 		} else if (newNumber.length() < 10) {
 			System.out.println("There are not enough numbers! Try again!");
 		}
-*/
 		
-		return null;
+		return newNumber;
 	}
 
 	/**
@@ -292,7 +279,7 @@ public class EvaluationService {
 	 */
 	public Map<String, Integer> wordCount(String string) {
 
-		/*//String a(replaced with string) = "stuff stuff olly in come free";
+		//String a(replaced with string) = "stuff stuff olly in come free";
 
 	     String[] b = string.split(" "); 
 	     HashMap<String, Integer> freqMap = new HashMap<String, Integer>();
@@ -303,7 +290,7 @@ public class EvaluationService {
 	     }
 	     for (Entry<String, Integer> result : freqMap.entrySet()) {
 	         System.out.println("The word " + result.getKey() + " occurs: " + result.getValue() + " times");
-	     }*/
+	     }
 	     
 		return null;
 	}
@@ -348,36 +335,17 @@ public class EvaluationService {
 
 		public int indexOf(T t) {
 		
-		/*int k=0;
+		int k=0;
 	        for(int i=0;i < sortedList.size();i++){
 	        	System.out.println(sortedList.get(i));
 	            if(sortedList.get(i) == t){
 	                k=i;
 	                System.out.println(k + ": IS INDEX");
 	                break;
-	            }*/
-		
-	           /* int n = sortedList.size();
-	    		int r = n-1;
-	    		int l = 0;*/
-	            
-		 /*if (r >= l) {
-	            int mid = l + (r - l)/2;
-	            System.out.println(sortedList.get(mid));
-	            
-	            if (sortedList.get(mid) == t) {
-	               System.out.println(mid + "got it");
 	            }
-	 
-	            else if (sortedList.get(mid)  t) {
-	            	r = mid - 1;
-	            	
-	            }
-	            else if(sortedList.get(mid) < t) {
-	            	r = mid + 1;
-	            }*/
+	        }
 		 
-			return 0;
+			return k;
 		}
 
 		public BinarySearch(List<T> sortedList) {
@@ -417,34 +385,35 @@ public class EvaluationService {
 		//FOR TEST ON QUICK FAST RUN, QUICK SHOULD BE UICKQAY NOT ICKQUAY BECAUSE OF VOWEL U
 		
 		//String string = "the therapy dog ran away";
+		String pig = "";
 
-		/*if (!string.contains(" ")) {
+		if (!string.contains(" ")) {
 
 			String phrases = string.toUpperCase();
 			if (phrases.startsWith("A") || phrases.startsWith("E") || phrases.startsWith("I") || phrases.startsWith("O")
 					|| phrases.startsWith("U")) {
-				System.out.print(string + "ay ");
+				pig += (string + "ay ");
 			} else if (phrases.startsWith("SH") || phrases.startsWith("CH") || phrases.startsWith("TH")) {
-				System.out.print(string.substring(2) + string.substring(0, 2) + "ay ");
+				pig += (string.substring(2) + string.substring(0, 2) + "ay ");
 			} else {
-				System.out.print(string.substring(1) + string.substring(0, 1) + "ay ");
+				pig += (string.substring(1) + string.substring(0, 1) + "ay ");
 			}
 		} else {
 			String[] words = string.split(" ");
 			for (String word : words) {
 				if (word.startsWith("a") || word.startsWith("e") || word.startsWith("i") || word.startsWith("o")
 						|| word.startsWith("u")) {
-					System.out.print(word + "ay ");
+					pig += (word + "ay ");
 				} else if (word.startsWith("sh") || word.startsWith("ch") || word.startsWith("th")) {
-					System.out.print(word.substring(2) + word.substring(0, 2) + "ay ");
+					pig += (word.substring(2) + word.substring(0, 2) + "ay ");
 				} else {
-					System.out.print(word.substring(1) + word.substring(0, 1) + "ay ");
+					pig += (word.substring(1) + word.substring(0, 1) + "ay ");
 				}
 			}
-			System.out.println();
-		}*/
+			System.out.println(pig);
+		}
 		
-		return null;
+		return pig;
 	}
 
 	/**
@@ -464,7 +433,7 @@ public class EvaluationService {
 	 */
 	public boolean isArmstrongNumber(int input) {
 		
-		 /*String inputAsString = input + "";
+		 String inputAsString = input + "";
 	       int numberOfDigits = inputAsString.length();
 	       int copyOfInput = input;
 	       int sum = 0;
@@ -476,10 +445,11 @@ public class EvaluationService {
 	       
 	       if (sum == input) {
 	           System.out.println(input + " is an armstrong number.");
+	           return true;
 	       } else {
 	           System.out.println(input + " is not an armstrong number.");
-	       }*/
-		    return false;
+	           return false;
+	       }
 	}
 
 	/**
@@ -494,7 +464,7 @@ public class EvaluationService {
 	 */
 	public List<Long> calculatePrimeFactorsOf(long l) {
 
-	    /* while (l%2==0)
+	     while (l%2==0)
 	     {
 	         System.out.print(2 + " ");
 	         l /= 2;
@@ -509,7 +479,8 @@ public class EvaluationService {
 	         }
 	     }
 	     if (l > 2)
-	         System.out.print(l + " ");*/
+	         System.out.print(l + " ");
+	     
 		return null;
 	}
 
@@ -549,7 +520,7 @@ public class EvaluationService {
 
 		public String rotate(String string) {
 
-			/*StringBuffer result= new StringBuffer();
+			StringBuffer result= new StringBuffer();
 			
 			for (int i=0; i<string.length(); i++)
 			{
@@ -581,7 +552,7 @@ public class EvaluationService {
 					result.append(ch);
 				}
 			}
-			System.out.println(result);*/
+			System.out.println(result);
 			return null;
 		}
 
@@ -601,7 +572,7 @@ public class EvaluationService {
 	 */
 	public int calculateNthPrime(int i) {
 
-		/*int num = 1;
+		int num = 1;
 	    int j;
 	    int count = 0;
 
@@ -618,9 +589,9 @@ public class EvaluationService {
 	    }
 	    if(i != 0) {
 	    System.out.println("Value of nth prime: " + num);
-	    }*/
+	    }
 		
-		return i;
+		return num;
 	}
 
 	/**
@@ -690,8 +661,8 @@ public class EvaluationService {
 	            	 cipher += b;
 	             }
 	         }
-	         System.out.println(cipher.toLowerCase());
-	        return string;
+	         return (cipher.toLowerCase());
+	       // return cipher;
 		}
 
 		/**
@@ -701,7 +672,7 @@ public class EvaluationService {
 		 * @return
 		 */
 		public static String decode(String string) {
-			/*String allchar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			String allchar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 			 string=string.toUpperCase();
 	         int len= string.length();
 	         int len1 = allchar.length();
@@ -729,10 +700,12 @@ public class EvaluationService {
 	             }
 	             }
 	             else if(Character.isDigit(b)){
-	            	 cipher += b;
+	            	cipher += b;
 	             }
 	         }
-	         System.out.println(cipher.toLowerCase());			*/
+			
+
+	         System.out.println(cipher.toLowerCase());			
 	         return null;
 		}
 	}
@@ -761,7 +734,7 @@ public class EvaluationService {
 	 */
 	public boolean isValidIsbn(String string) {
 	
-		/*string = string.replaceAll( "-", "" );
+		string = string.replaceAll( "-", "" );
 		int count = 1;
 		int result = 0;
 		for(int i = 0; i < string.length(); i++) {
@@ -819,8 +792,8 @@ public class EvaluationService {
 		
 		
 		return false;
-		}*/
-	return true;
+		}
+	//return true;
 	}
 
 	/**
@@ -937,8 +910,24 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isLuhnValid(String string) {
-		// TODO Write an implementation for this method declaration
-		return false;
+		/*int nDigits = string.length();
+		 
+	    int nSum = 0;
+	    boolean isSecond = false;
+	    for (int i = nDigits - 1; i >= 0; i--) 
+	    {
+	 
+	        int d = string.charAt(i) - 'a';
+	 
+	        if (isSecond == true)
+	            d = d * 2;
+	        nSum += d / 10;
+	        nSum += d % 10;
+	 
+	        isSecond = !isSecond;
+	    }
+	    return (nSum % 10 == 0);*/
+	    return false;
 	}
 
 	/**
